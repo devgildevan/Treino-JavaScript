@@ -1,8 +1,19 @@
 const turnOn = document.getElementById ( 'turnOn');
 const turnOff = document.getElementById ( 'turnOff');
 const lamp = document.getElementById ( 'lamp');
-const botao = document.getElementById ('On');
+const turnRestart = document.getElementById ('turnRestarte')
 
+
+turnOn.style.display= 'flex'
+turnOff.style.display= 'none'
+turnRestarte.style.display= 'none'
+
+
+function lampRestart(){
+    if( lamp.src.indexOf == "quebrada"){
+        return turnRestarte.style.display = 'flex'
+    }
+}
 
 
 function isLampBroken (){
@@ -12,6 +23,7 @@ function isLampBroken (){
 function lampOn(){
     if(!isLampBroken()){
         lamp.src = "./img/ligada.jpg";
+        
        
     }
 }
@@ -24,7 +36,26 @@ function lampOff(){
 
 function lampBroken (){
     lamp.src = './img/quebrada.jpg'
+    return turnRestarte.style.display = "flex"
 }
+
+
+function lampTrocar() {
+    if (turnOn.style.display == "flex") {
+        turnOn.style.display = "none";
+        turnOff.style.display = "flex";
+    } else if (turnOn.style.display == "none") {
+        turnOn.style.display = "flex";
+        turnOff.style.display = "none";
+    }
+}
+
+
+function lampRestarte(){
+    lamp.src = './img/desligada.jpg'
+    turnRestart.style.display= 'none'
+}
+
 
 turnOn.addEventListener ('click' , lampOn);
 turnOff.addEventListener ('click' , lampOff);

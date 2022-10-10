@@ -1,13 +1,39 @@
 *{
     margin: 0;
     padding: 0;
-    
+    background: b;
+}
+
+body{
+   background: linear-gradient(45deg, #084177, #687466, #cd8d7b, #fbc490);
+   /* background-image: url(); */
+   background-size: 300% 300%;
+   animation:colors 15s ease infinite ;
+}
+img{
+    border: 2px solid gold;
+    border-radius: 1rem ;
+}
+
+@keyframes colors {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 header, main{
     margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+header{
+    margin-top: 10%;
 }
 header h1{
     background-color: yellow;
@@ -17,12 +43,7 @@ header h1{
     width: 250px;
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.297);
 }
-/* header{
-    background-color: yellow;
-    width: 250px;
-    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.297);
-   
-} */
+
 button{
     margin: 0 10px;
     width: 150px;
@@ -38,3 +59,16 @@ button:hover{
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.297);
 }
 
+#turnOn, #turnOff {
+    justify-content: center;
+}
+
+#turnOn, #turnOff:hover {
+    cursor: pointer;
+}
+#turnRestarte{
+    margin-top: 1rem;
+    background-color:#DD4B1A;
+    color: #fff;
+    justify-content: center;
+}

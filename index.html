@@ -11,16 +11,19 @@
 <body>
     <header>
         <h1>VANILLA JS</h1>
+        <button onclick="lampRestarte()" id="turnRestarte">Reiniciar</button>
+
     </header>
 
     <main>
+        
         <div class="div">
             <img src="/img/desligada.jpg" alt="Lâmpada" id="lamp">
         </div>
     
          <div>
-            <button id="turnOn"  >Ligar</button>
-            <button id="turnOff" >Desligar</button>
+            <button   onclick="lampTrocar()"  id="turnOn">Ligar</button>
+            <button onclick="lampTrocar()"  id="turnOff">Desligar</button>
          </div>
 
     </main>
