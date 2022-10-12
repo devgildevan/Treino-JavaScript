@@ -1,19 +1,20 @@
-const turnOn = document.getElementById ( 'turnOn');
-const turnOff = document.getElementById ( 'turnOff');
+const turnOnOff = document.getElementById ( 'turnOnOff');
+// const turnOff = document.getElementById ( 'turnOff');
 const lamp = document.getElementById ( 'lamp');
+
 const turnRestart = document.getElementById ('turnRestarte')
 
 
-turnOn.style.display= 'flex'
-turnOff.style.display= 'none'
+// turnOn.style.display= 'flex'
+// turnOff.style.display= 'none'
 turnRestarte.style.display= 'none'
 
 
-function lampRestart(){
-    if( lamp.src.indexOf == "quebrada"){
-        return turnRestarte.style.display = 'flex'
-    }
-}
+// function lampRestart(){
+//     if( lamp.src.indexOf == "quebrada"){
+//         return turnRestarte.style.display = 'flex'
+//     }
+// }
 
 
 function isLampBroken (){
@@ -39,16 +40,27 @@ function lampBroken (){
     return turnRestarte.style.display = "flex"
 }
 
-
-function lampTrocar() {
-    if (turnOn.style.display == "flex") {
-        turnOn.style.display = "none";
-        turnOff.style.display = "flex";
-    } else if (turnOn.style.display == "none") {
-        turnOn.style.display = "flex";
-        turnOff.style.display = "none";
+function lampOnOff(){
+    if (turnOnOff.textContent ==  "Ligar"){
+        lampOn();
+        turnOnOff.textContent = "Delsigar";
+    }else{
+        lampOff();
+        turnOnOff.textContent = "Ligar";
     }
 }
+
+
+// A MANEIRA QUE ESTÁ ABAIXO FOI FEITA DE OUTRA FORA E FUNCIONA 
+// function lampTrocar() {
+//     if (turnOn.style.display == "flex") {
+//         turnOn.style.display = "none";
+//         turnOff.style.display = "flex";
+//     } else if (turnOn.style.display == "none") {
+//         turnOn.style.display = "flex";
+//         turnOff.style.display = "none";
+//     }
+// }
 
 
 function lampRestarte(){
@@ -57,8 +69,8 @@ function lampRestarte(){
 }
 
 
-turnOn.addEventListener ('click' , lampOn);
-turnOff.addEventListener ('click' , lampOff);
+turnOnOff.addEventListener ('click' , lampOnOff);
+// turnOff.addEventListener ('click' , lampOff);
 lamp.addEventListener ( "mouseover", lampOn)
 lamp.addEventListener ( "mouseleave", lampOff)
 lamp.addEventListener ( 'dblclick' , lampBroken)
